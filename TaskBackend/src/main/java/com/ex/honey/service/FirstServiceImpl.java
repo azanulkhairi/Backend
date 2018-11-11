@@ -46,7 +46,6 @@ public class FirstServiceImpl implements FirstService {
 		precious.put("iron", 195.5);
 		
 		
-		
 		String[] line = Sentence.split(" ");
 		List<String> count = new ArrayList();
 		List<String> resultWord = new ArrayList();
