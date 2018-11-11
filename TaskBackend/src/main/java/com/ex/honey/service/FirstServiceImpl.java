@@ -55,10 +55,10 @@ public class FirstServiceImpl implements FirstService {
 			if(money.containsKey(getWord)) {
 				count.add(money.get(getWord));
 				resultWord.add(getWord);
-			}else if(precious.containsKey(getWord)) {
-				if(getWord.equals("Silver")) {
+			}else if(precious.containsKey(getWord.toLowerCase())) {
+				if(getWord.equalsIgnoreCase("Silver")) {
 					multiply = 17.00;
-				}else if(getWord.equals("Gold")) {
+				}else if(getWord.equalsIgnoreCase("Gold")) {
 					multiply = 14450.0;
 				}else {
 					multiply = 195.5;
