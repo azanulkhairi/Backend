@@ -66,7 +66,9 @@ public class FirstServiceImpl implements FirstService {
 			if(count.size()>1) {
 				for(int i=0;i<count.size()-1;) {				
 					int val = value.get(count.get(i));
-					int valnext = value.get(count.get(i+1));			
+					int valnext = value.get(count.get(i+1));
+					double predict = Double.valueOf(val)/ Double.valueOf(valnext);
+					if (predict >= 0.1) {
 						String rom = count.get(i).concat(count.get(i+1));
 						if(value.get(rom)!=null) {
 							res+=value.get(rom);
@@ -76,9 +78,15 @@ public class FirstServiceImpl implements FirstService {
 							i+=1;
 						}
 						
+						System.out.println(predict);
+						
 						if(i == count.size()-1) {
 							res+=value.get(count.get(count.size()-1));
 						}
+					} else {
+						return "I have no Idea";
+					}
+						
 				}
 			}else {
 				res = value.get(count.get(0));
